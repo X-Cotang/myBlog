@@ -22,7 +22,7 @@ body {
   font-weight: 400;
   font-size: 0.85em;
   overflow: hidden;
-  background-image: url('http://getwallpapers.com/wallpaper/full/0/f/e/429197.jpg');
+  background-image: url('/images/bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
