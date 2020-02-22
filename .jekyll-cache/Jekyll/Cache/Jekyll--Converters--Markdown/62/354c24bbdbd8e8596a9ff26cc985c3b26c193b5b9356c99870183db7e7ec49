@@ -1,0 +1,126 @@
+I"<h2 id="segment-registers-thanh-ghi-đoạn">Segment Registers (Thanh ghi đoạn):</h2>
+<ul>
+  <li>Chức năng:
+-Chứa mã chương trình<br />
+-Chứa dữ liệu và kết quả trung gian của chương trình<br />
+-Tạo ra ngăn xếp (stack)</li>
+  <li>Vi xử lí 8086 có 4 thanh ghi đoạn 16bit:<br />
+-<strong>CS</strong> :Thanh ghi đoạn mã<br />
+-<strong>DS</strong> :Thanh ghi đoạn ngăn xếp<br />
+-<strong>SS</strong> :Thanh ghi stack<br />
+-<strong>ES</strong> :Thanh ghi đoạn dữ liệu phụ<br />
+-..(ngoài ra còn có FS,GS cung cấp đoạn dữ liệu bổ sung data)
+    <h2 id="data-registers-thanh-ghi-dữ-liệu">Data Registers (Thanh ghi dữ liệu)</h2>
+  </li>
+  <li>Chức năng: Store dữ liệu</li>
+  <li>Thanh ghi 32 bit có chữ E ở đầu ,thanh ghi 64 có chữ R (VD: EAX,RAX)</li>
+  <li>These 32-bit registers can be used in three ways:
+    <ul>
+      <li>As complete 32-bit data registers: EAX, EBX, ECX, EDX.</li>
+      <li>Lower halves of the 32-bit registers can be used as four 16-bit data registers: AX, BX, CX and DX.</li>
+      <li>Lower and higher halves of the above-mentioned four 16-bit registers can be used as eight 8-bit data registers: AH, AL, BH, BL, CH, CL, DH, and DL.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://www.tutorialspoint.com/assembly_programming/images/register1.jpg" alt="" /><br />
+AX is the primary accumulator<br />
+BX is known as the base register<br />
+CX is known as the count register<br />
+DX is known as the data register</p>
+<h2 id="pointer-registers-thanh-ghi-con-trỏ">Pointer Registers (Thanh ghi con trỏ)</h2>
+<ul>
+  <li>The pointer registers are 32-bit EIP, ESP, and EBP registers and corresponding 16-bit right portions IP, SP, and BP
+    <ul>
+      <li>IP (Instruction Pointer:Con trỏ lệnh): Chứa địa chỉ offset của ô nhớ chứa lệnh kế.IP kết hợp với CS cung cấp địa chỉ hiên tại của đoạn mã</li>
+      <li>BP (Base Pointer: Con trỏ cơ sở): Chứa địa chỉ offset của ô nhớ nằm trong stack.</li>
+      <li>SP (Stack Pointer: Con trỏ ngăn xếp): Chứa địa chỉ offset của đỉnh ngăn xếp.
+        <h2 id="index-registers-thanh-ghi-chỉ-số">Index Registers (Thanh ghi chỉ số)</h2>
+      </li>
+      <li>The 32-bit index registers are ESI and EDI,16 bit :SI and DI.Được dùng để chứa địa chỉ offset của mảng nhớ nguồn và đích trong các thao tác chuỗi. DS:SI phần tử thuộc chuỗi nguồn, ES:DI phần tử thuộc chuỗi đích</li>
+      <li>SI (Source Index)</li>
+      <li>DI (Destination Index)
+        <h2 id="flag-registers-thanh-ghi-cờ">Flag Registers (Thanh ghi cờ)</h2>
+      </li>
+    </ul>
+  </li>
+  <li>Là các thanh ghi 16 bit nhưng chỉ có 9 bit được sử dụng</li>
+  <li>Cờ trạng thái : Có 6 cờ trạng thái là AF,CF,SF,PF,ZF,OF .Phản ánh các trạng thái khác nhau của kết quả sau một thao tác nào đó.</li>
+  <li>Cờ điều khiển : Có 3 cờ điều khiển IF,TF,DF.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Flag</th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: right"> </th>
+      <th> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: right">O</th>
+      <th>D</th>
+      <th style="text-align: center">I</th>
+      <th style="text-align: right">T</th>
+      <th style="text-align: center">S</th>
+      <th style="text-align: right">Z</th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: right">A</th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: right">P</th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: right">C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bit no</td>
+      <td style="text-align: center">15</td>
+      <td style="text-align: right">14</td>
+      <td>13</td>
+      <td style="text-align: center">12</td>
+      <td style="text-align: right">11</td>
+      <td>10</td>
+      <td style="text-align: center">9</td>
+      <td style="text-align: right">8</td>
+      <td style="text-align: center">7</td>
+      <td style="text-align: right">6</td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: right">4</td>
+      <td style="text-align: center">3</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: right">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p>Overflow Flag (OF) − It indicates the overflow of a high-order bit (leftmost bit) of data after a signed arithmetic operation.</p>
+  </li>
+  <li>
+    <p>Direction Flag (DF) − It determines left or right direction for moving or comparing string data. When the DF value is 0, the string operation takes left-to-right direction and when the value is set to 1, the string operation takes right-to-left direction.</p>
+  </li>
+  <li>
+    <p>Interrupt Flag (IF) − It determines whether the external interrupts like keyboard entry, etc., are to be ignored or processed. It disables the external interrupt when the value is 0 and enables interrupts when set to 1.</p>
+  </li>
+  <li>
+    <p>Trap Flag (TF) − It allows setting the operation of the processor in single-step mode. The DEBUG program we used sets the trap flag, so we could step through the execution one instruction at a time.</p>
+  </li>
+  <li>
+    <p>Sign Flag (SF) − It shows the sign of the result of an arithmetic operation. This flag is set according to the sign of a data item following the arithmetic operation. The sign is indicated by the high-order of leftmost bit. A positive result clears the value of SF to 0 and negative result sets it to 1.</p>
+  </li>
+  <li>
+    <p>Zero Flag (ZF) − It indicates the result of an arithmetic or comparison operation. A nonzero result clears the zero flag to 0, and a zero result sets it to 1.</p>
+  </li>
+  <li>
+    <p>Auxiliary Carry Flag (AF) − It contains the carry from bit 3 to bit 4 following an arithmetic operation; used for specialized arithmetic. The AF is set when a 1-byte arithmetic operation causes a carry from bit 3 into bit 4.</p>
+  </li>
+  <li>
+    <p>Parity Flag (PF) − It indicates the total number of 1-bits in the result obtained from an arithmetic operation. An even number of 1-bits clears the parity flag to 0 and an odd number of 1-bits sets the parity flag to 1.</p>
+  </li>
+  <li>
+    <p>Carry Flag (CF) − It contains the carry of 0 or 1 from a high-order bit (leftmost) after an arithmetic operation. It also stores the contents of last bit of a shift or rotate operation.</p>
+  </li>
+</ul>
+:ET
