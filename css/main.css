@@ -344,3 +344,38 @@ background: rgba(255,0,0,0.4);
       transform:rotate(360deg);
   }
 }
+
+/*black hole*/
+.swirl{
+  width:auto;
+  height:auto;
+  position:relative;
+  filter:blur(2px) hue-rotate(0deg);
+  margin:auto;
+  display:flex;
+}
+
+.swirl img{
+  margin: auto;
+}
+#spin{
+  
+}
+@keyframes swirlSpin{
+  0%{
+      width: 0%;
+      height: 0%;
+      opacity: 1;
+  }
+  50%{
+  transform:rotate(360deg);
+  filter:blur(2px) hue-rotate(360deg);
+  width: 1000%;
+  height: 1000%;
+  
+  }
+  50%{
+    transform:rotate(10000deg);
+    opacity: 0.1;
+  }
+}

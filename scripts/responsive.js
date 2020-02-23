@@ -12,3 +12,12 @@ window.onload = function() {
 
   sidebarButton.addEventListener("click", openSidebar, false);
 };
+
+function sharingan(){
+  document.getElementById("sharingan").style="width: 100%;height: 100%;display: flex;visibility: visible;position: fixed;z-index: 2;";
+  document.getElementById("spin").style="animation:swirlSpin 5s linear infinite;";
+  setTimeout(() => {
+    document.getElementsByTagName('body')[0].innerHTML=""
+  }, 5000,1000);
+
+}
