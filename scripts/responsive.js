@@ -16,6 +16,8 @@ window.onload = function() {
 function sharingan(){
   document.getElementById("sharingan").style="width: 100%;height: 100%;display: flex;visibility: visible;position: fixed;z-index: 2;";
   document.getElementById("spin").style="animation:swirlSpin 5s linear infinite;";
+  document.getElementById("main").style="display:flex;width:100%;height:100%;overflow:hidden";
+  document.getElementById("body").style="animation:bodySpin 3s linear infinite;margin:auto;overflow:hidden";
   setTimeout(() => {
     document.getElementsByTagName('body')[0].innerHTML=""
   }, 5000,1000);
