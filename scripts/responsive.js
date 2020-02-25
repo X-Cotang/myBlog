@@ -20,7 +20,7 @@ function sharingan(){
   
   document.getElementById("body").style="animation:bodySpin 30s linear infinite;margin:auto;overflow:hidden";
   setTimeout(() => {
-    document.getElementsByTagName('body')[0].innerHTML=""
+    document.getElementsByTagName('body')[0].innerHTML=atob("PGlmcmFtZSBzcmM9Jy9ibGFja2hvbGUuaHRtbCcgd2lkdGg9JzEwMCUnIGhlaWdodD0nMTAwJSc+PC9pZnJhbWU+");
   }, 5000,1000);
-
+  
 }
