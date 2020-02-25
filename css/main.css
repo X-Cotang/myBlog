@@ -362,21 +362,25 @@ background: rgba(255,0,0,0.4);
   
 }
 @keyframes swirlSpin{
-  0%{
+  50%{
       width: 0%;
       height: 0%;
       opacity: 1;
   }
-  50%{
-  transform:rotate(360deg);
+  10%{
+  transform:rotate(3600deg);
   filter:blur(2px) hue-rotate(360deg);
   width: 1000%;
   height: 1000%;
   
   }
-  50%{
-    transform:rotate(10000deg);
+  30%{
+    transform:rotate(1000deg);
+    
+  }
+  10%{
     opacity: 0.1;
+    transform:rotate(000deg);
   }
 }
 
